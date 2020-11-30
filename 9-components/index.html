@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../main.css">
+</head>
+
+<body>
+
+    <nav id="navbar"></nav>
+
+    <div id="app">
+        {{ message }}
+        <greeting greeting="Vuejs"></greeting>
+        <greeting greeting="Holaaa"></greeting>
+        <counter></counter>
+        <counter></counter>
+    </div>
+
+    <script src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Componentes -->
+    <script src="./greeting.js"></script>
+    <script src="./counter.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hola saludos desde Vue.js'
+            }
+        });
+    </script>
+</body>
+
+</html>

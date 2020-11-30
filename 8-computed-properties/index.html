@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed Properties</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../main.css">
+</head>
+
+<body class="bg-light">
+
+    <nav id="navbar"></nav>
+
+    <div id="app" class="container mt-5">
+        <div class="row">
+            <h3>Mensaje: {{ message }}</h3>
+            <h3>Mensaje invertido: {{ reverseMessage }}</h3>
+            <input type="text" class="form-control" v-model="message">
+        </div>
+
+        <div class="row my-4">
+            <div class="col-12">
+                <h5>{{ percent }}</h5>
+                <button class="btn btn-danger" @click="setPercent(-5)">-</button>
+                <button class="btn btn-primary" @click="setPercent(5)">+</button>
+                <div class="progress mt-2">
+                    <div class="progress-bar" role="progressbar" :style="{'width': percent+'%'}" aria-valuenow="10"
+                        aria-valuemin="0" aria-valuemax="100" :class="color">{{ percent }}%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>Número factorial: {{ factorial }}</h3>
+            <input type="percent" class="form-control" v-model="number" min="0">
+        </div>
+    </div>
+
+    <script src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello world',
+                percent: 0,
+                number: 0,
+            },
+            methods: {
+                setPercent(value) {
+                    this.percent = this.percent + value;
+                }
+            },
+            computed: {
+                reverseMessage() {
+                    return this.message.split('').reverse().join('');
+                    // return this.message.length;
+                },
+                color() {
+                    return {
+                        'bg-success': this.percent <= 30,
+                        'bg-warning': this.percent > 30 && this.percent < 60,
+                        'bg-danger': this.percent >= 60
+                    }
+                },
+                factorial() {
+                    let fact = 1;
+                    for (let i = 1; i <= this.number; i++) {
+                        fact = fact * i;
+                    }
+                    return fact;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

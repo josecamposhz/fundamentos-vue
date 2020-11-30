@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-if</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../main.css">
+</head>
+
+<body>
+  <nav id="navbar"></nav>
+  <div id="app">
+    <h4 v-if="seen">Ahora me ves</h4>
+
+    <h2 v-if="nombre.length > 3">Hola {{ nombre }}</h2>
+    <h2 v-else>Introduce tu Nombre.</h2>
+    <input v-model="nombre">
+
+
+    <label class="mt-3">Saldo</label>
+    <input v-model="cash" type="number">
+    <h2>Saldo disponible: {{ cash > 0 ?  cash : 'Sin saldo' }}</h2>
+    
+    <label class="mt-3">Cantidad</label>
+    <input v-model="count" type="number">
+    <h2 v-if="count > 100">Cantidad mayor a 100</h2>
+    <h2 v-else-if="count <= 100 && count > 0">
+      Cantidad entre 0 a 100</span>
+    </h2>
+    <h2 v-else>Cantidad menor a 0</h2>
+
+  </div>
+
+  <script src="../main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        nombre: '',
+        seen: true,
+        cash: 0,
+        count: 5
+      },
+      // data() {
+      //   return {
+      //   }
+      // }
+    })
+  </script>
+</body>
+
+</html>
