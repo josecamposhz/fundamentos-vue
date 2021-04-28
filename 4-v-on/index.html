@@ -14,6 +14,10 @@
   <div id="app">
     <p>{{ message }}</p>
     <button v-on:click="reverseMessage">Reverse Message</button>
+
+
+    <button v-on:click="aumentar()">Aumentar en 1</button>
+    <p>Se ha hecho clic en el botón de arriba {{ counter }} veces.</p>
   </div>
 
   <script src="../main.js"></script>
@@ -22,9 +26,13 @@
     const app = new Vue({
       el: '#app',
       data: {
+        counter: 0,
         message: 'Mensaje personalizado'
       },
       methods: {
+        aumentar() {
+          this.counter += 2;
+        },
         reverseMessage: function () {
           // `this` dentro de los métodos apunta a la instancia de Vue
           this.message = this.message.split('').reverse().join('')

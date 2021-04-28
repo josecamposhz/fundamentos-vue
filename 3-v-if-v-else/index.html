@@ -12,6 +12,7 @@
 <body>
   <nav id="navbar"></nav>
   <div id="app">
+    <pre>{{ $data }}</pre>
     <h4 v-if="seen">Ahora me ves</h4>
 
     <h2 v-if="nombre.length > 3">Hola {{ nombre }}</h2>
@@ -31,6 +32,8 @@
     </h2>
     <h2 v-else>Cantidad menor a 0</h2>
 
+    <h1 v-show="seen">Mostrar</h1>
+
   </div>
 
   <script src="../main.js"></script>
@@ -40,7 +43,7 @@
       el: '#app',
       data: {
         nombre: '',
-        seen: true,
+        seen: false,
         cash: 0,
         count: 5
       },

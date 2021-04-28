@@ -14,9 +14,16 @@
     <nav id="navbar"></nav>
 
     <div id="app">
-        {{ message }}
-        <greeting greeting="Vuejs"></greeting>
+        <!-- {{ message }} -->
+        <greeting :greeting="message"></greeting>
         <greeting greeting="Holaaa"></greeting>
+        <counter></counter>
+        <counter></counter>
+        <counter></counter>
+        <counter></counter>
+        <counter></counter>
+        <counter></counter>
+        <counter></counter>
         <counter></counter>
         <counter></counter>
     </div>
@@ -32,7 +39,7 @@
         new Vue({
             el: '#app',
             data: {
-                message: 'Hola saludos desde Vue.js'
+                message: 'Hola saludos desde la instancia Vue'
             }
         });
     </script>

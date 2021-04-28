@@ -18,6 +18,7 @@
       to see my dynamically bound title!
     </span>
 
+    <a href="https://pokeapi.co/api/v2/pokemon/1/">Pokemon</a>
     <a v-bind:href="urlPokemon">Pokemon</a>
     <a :href="urlPokemon">Pokemon</a>
 
@@ -36,7 +37,7 @@
       data: {
         message: `Cargaste esta pagina en ${new Date().toLocaleString()}`,
         urlPokemon: 'https://pokeapi.co/api/v2/pokemon/1/',
-        className: 'p-4 border',
+        className: 'p-4 border bg-warning',
         pokemon: {
           name: 'bulbasaur',
           image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',

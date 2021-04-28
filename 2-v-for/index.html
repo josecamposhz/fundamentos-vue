@@ -13,8 +13,8 @@
   <nav id="navbar"></nav>
   <div id="app">
     <ol>
-      <li v-for="todo in todos">
-        {{ todo.text }}
+      <li v-for="(tarea, index) in todos">
+        {{ tarea.text }} - {{ index }} 
       </li>
     </ol>
     <ul>
@@ -33,6 +33,7 @@
         todos: [
           { text: 'Learn JavaScript' },
           { text: 'Learn Vue' },
+          { text: 'Learn CSS' },
           { text: 'Build something awesome' }
         ],
         numbers: [

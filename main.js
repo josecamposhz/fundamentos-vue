@@ -36,6 +36,10 @@ const contents = [
         url: './9-components/index.html'
     },
     {
+        title: 'Componentes Props - Emit',
+        url: './10-components-props-emit/index.html'
+    },
+    {
         title: 'Todo App',
         url: './todo-app/index.html'
     },

@@ -2,7 +2,7 @@ Vue.component('greeting',{
     props: {
         greeting: {
             type: String,
-            default: "Holaaaaa"
+            default: "Adios"
         }
     },
     template: `<h3>{{ greeting }}</h3>`,
